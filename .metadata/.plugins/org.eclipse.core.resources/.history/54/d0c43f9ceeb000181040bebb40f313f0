@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+<body bgcolor="blue">
+	<a href="Hello">Click here</a>
+	
+	<form action=" ">
+	<label>Enter your name:</label>
+	<input type="text" name="Username" size="15"/>
+	<input type="submit"/>
+	
+	</form>
+	
+</body>
+</html>
