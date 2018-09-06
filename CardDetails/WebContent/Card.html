@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+</head>
+<body>
+<h1>Enter Card details</h1>
+<hr>
+
+<form action="processing" method="post">
+
+<label>Name on Card:</label>
+<input type="text" name="name" size="20" />
+<label>Card Number:</label>
+<input type="text" name="card" size="20"/>
+<label>CVV:</label>
+<input type="password" name="cvv" min="3" max="3"/>
+<label>Validity</label>
+
+<select name="mo">
+
+	<option value="2">02</option>
+	<option value="3">03</option>
+	<option value="4">04</option>
+	
+</select>
+/
+<select name="ye">
+
+	<option value="2">02</option>
+	<option value="3">03</option>
+	<option value="4">04</option>
+	
+</select>
+
+<input type="submit" name="submit"/>
+
+
+</form>
+</body>
+</html>
