@@ -1,6 +1,10 @@
 package com.capgemini.employeeapp.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,18 +19,21 @@ import com.capgemini.employeeapp.model.Employee;
 @WebServlet("/addEmployee")
 public class AddEmployeeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private EmployeeDao employeeDao = new EmployeeDaoImpl();
-       
-    
+	private EmployeeDao employeeDao;
+	private ServletContext context;
+ 
     public AddEmployeeController() {
-        super(); 
-        // TODO Auto-generated constructor stub
+        super();
+    	employeeDao = new EmployeeDaoImpl(); 
     }
-
-	
+    
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+    	context = config.getServletContext();
+    }
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+		
 		response.setContentType("text/html");
 		
 		int empId = Integer.parseInt(request.getParameter("empId"));
@@ -34,13 +41,21 @@ public class AddEmployeeController extends HttpServlet {
 		double empSalary = Double.parseDouble(request.getParameter("empSalary"));
 		String empDept = request.getParameter("empDept");
 		
+		context.setAttribute("employeeDao", employeeDao);
+		
 		Employee employee = new Employee(empId, empDept, empName, empSalary);
-		if(employeeDao.addEmployee(employee)) {
-			
+		RequestDispatcher dispatcher = null;
+		if(employeeDao.addEmployee(employee)) {		
+			 /*dispatcher = request.getRequestDispatcher("success.jsp");
+			 dispatcher.forward(request, response);*/
+			/*response.sendRedirect("success.jsp");*/
+			 response.sendRedirect("getAllEmployees");
 		}
-		else {
-			
-		}
+		else {		
+			dispatcher = request.getRequestDispatcher("error.jsp");
+			dispatcher.forward(request, response);
+			/*response.sendRedirect("error.jsp");*/
+		}		
 	}
 
 }

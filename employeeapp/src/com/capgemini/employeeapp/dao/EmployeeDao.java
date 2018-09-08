@@ -12,7 +12,7 @@ public interface EmployeeDao {
 	public Employee findElementById(int employeeId);
 	public boolean deleteEmployee(int employeeId);
 	public boolean addEmployee(Employee employee);
-	public Employee updateEmployee(Employee employee);
+	public boolean updateEmployee(Employee employee);
 
 	
 }
