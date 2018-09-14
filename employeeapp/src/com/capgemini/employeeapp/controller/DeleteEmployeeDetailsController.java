@@ -37,6 +37,7 @@ public class DeleteEmployeeDetailsController extends HttpServlet {
 		if(employeeDao.deleteEmployee(employeeId)) {
 			
 			response.sendRedirect("getAllEmployees");
+		
 		}
 		else
 		{
