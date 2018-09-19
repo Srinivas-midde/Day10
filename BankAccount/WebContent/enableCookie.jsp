@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Well done!</h4>
+  <h4 class="alert-heading">OOPS!</h4>
   <p>Error</p>
   <hr>
   <p class="mb-0">Cookies disabled. Try again by enabling cookies</p>

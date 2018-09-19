@@ -1,4 +1,4 @@
-package com.capgemini.bankaccount.database;
+package com.capgemini.bankaccount.util;
 
 import java.time.LocalDate;
 import java.util.HashSet;

@@ -34,14 +34,15 @@ public class BankAccountServiceImpl implements BankAccountService {
 	public boolean fundTransfer(long fromAcc, long toAcc, double amount)
 			throws InsufficientAccountBalanceException, NegativeAmountException, AccountNotFoundException {
 		double accountBalanceFrom = bankaccountdaoimpl.getBalance(fromAcc);
-		if (accountBalanceFrom < amount)
+		
+		if (accountBalanceFrom < amount) 
 			throw new InsufficientAccountBalanceException("There isn't sufficient balance in your account!");
 		else if (amount < 0)
 			throw new NegativeAmountException("The amount cannot be negative!");
 		else {
 			serviceobject = new BankAccountServiceImpl();
-			serviceobject.withdraw(fromAcc, amount);
 			serviceobject.deposit(toAcc, amount);
+			serviceobject.withdraw(fromAcc, amount);
 			return true;
 		}
 	}

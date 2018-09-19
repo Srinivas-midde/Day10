@@ -5,6 +5,12 @@ import java.util.Objects;
 
 public class Customer {
 
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerPassword="
+				+ customerPassword + ", customerEmail=" + customerEmail + ", customerAddress=" + customerAddress
+				+ ", customerDateOfBirth=" + customerDateOfBirth + ", account=" + account.toString() + "]";
+	}
 	private long customerId;
 	private String customerName;
 	private String customerPassword;

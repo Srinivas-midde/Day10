@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Welcome</title>
   </head>
   <body background="https://stmed.net/sites/default/files/piggy-bank-wallpapers-28809-5663057.png" class="mr-2">
 <!--   <meta charset = "ISO-8859-1"> -->
@@ -21,19 +21,19 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-        <img src="https://www.brandcrowd.com/gallery/brands/thumbs/thumb14114109092970.jpg" style="width: 90px; height: 90px" >
+        <img src="https://media.istockphoto.com/vectors/piggy-bank-icon-vector-id539127220" style="width: 90px; height: 90px" >
         <h2>&nbsp;&nbsp;&nbsp;PIGGY BANK</h2>
         
     </div>
-    <div class="d-flex flex-row-reverse">
+<!--     <div class="d-flex flex-row-reverse"> -->
       
-    </div>
+<!--     </div> -->
 </nav>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<!--     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+<!--         <span class="navbar-toggler-icon"></span> -->
+<!--     </button> -->
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -97,6 +97,7 @@
     <div class="alert alert-danger" role="alert">
     Invalid Credentials! Try again.
     </div>
+		
     </c:if>
 </form>
 </div>

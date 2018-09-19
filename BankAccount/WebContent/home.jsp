@@ -5,6 +5,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+.table-bordered td, .table-bordered th{
+    border-color: black !important;
+}
+</style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -16,13 +21,16 @@
   <p>Thank you for your faith!</p>
 </div>
 <div class="row m-0">
-    <div class="col-md-6 mt-5 ml-1 mr-0 mb-5">
-        <div class="card">
-            <div class="card-header">
-                Customer Details
-            </div>
+    <div class="col mt-5 ml-1 mr-0 mb-5">
+
+        <div class="table-responsive">
             <div class="m-0">
-                <table class="table table-bordered m-0" >
+                <table class="table table-bordered m-0" style="background-color: #E0E0E3; padding:150px;   ">
+                <thread>
+                <tr>
+                <p align="center"><font size="5" color="black">Customer Details</font></p>
+                </tr>
+                </thread>
                     <thead>
                     <tr>
                         <th scope="col"><h5 >Customer ID</h5></th>
@@ -45,13 +53,15 @@
             </div>
         </div>
     </div>
-    <div class="col-md-5 mt-5 ml-0">
-        <div class="card">
-            <div class="card-header">
-                 Account Details
-            </div>
+    <div class="col mt-5 ml-0">
+        <div class="table-responsive">
             <div class="m-0">
-                <table class="table table-bordered m-0">
+                <table class="table table-bordered m-0" style="background-color: #E0E0E3; padding:150px;   ">
+                <thread>
+                <tr>
+                <p align="center"><font size="5" color="black">Account Details</font></p>
+                </tr>
+                </thread>
                     <thead>
                     <tr>
                         <th scope="col"><h5 >Account ID</h5></th>

@@ -30,7 +30,7 @@ public class PerformanceCheckFilter implements Filter {
 	    long beforeTime = System.currentTimeMillis();	    
 		chain.doFilter(request, response);
 		long afterTime = System.currentTimeMillis();
-		context.log("Time to prorcess the request by " + req.getServletPath() 
+		context.log("Time to process the request by " + req.getServletPath() 
 		            + " is " + (afterTime - beforeTime) + " ms");
 	}
 

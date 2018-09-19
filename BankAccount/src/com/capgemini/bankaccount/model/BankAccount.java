@@ -20,6 +20,10 @@ public class BankAccount {
 	public long getAccountId() {
 		return accountId;
 	}
+	@Override
+	public String toString() {
+		return "BankAccount [accountId=" + accountId + ", accountType=" + accountType + ", balance=" + balance + "]";
+	}
 	public void setAccountId(long accountId) {
 		this.accountId = accountId;
 	}

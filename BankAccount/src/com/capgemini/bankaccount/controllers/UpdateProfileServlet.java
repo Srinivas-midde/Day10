@@ -19,7 +19,7 @@ public class UpdateProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Customer customer;
 	CustomerServiceImpl customerserviceimpl;
-	ServletRequest session;
+	
 
 	public UpdateProfileServlet() {
 		customer = new Customer();
@@ -42,10 +42,12 @@ public class UpdateProfileServlet extends HttpServlet {
 
 		customer = customerserviceimpl.updateProfile(customer);
 		if (customer != null) {
-			RequestDispatcher requestdispatcher = request.getRequestDispatcher("home.jsp");
+			request.getSession().setAttribute("customer", customer);
+			RequestDispatcher requestdispatcher = request.getRequestDispatcher("home");
 			requestdispatcher.forward(request, response);
 		} else {
-			RequestDispatcher requestdispatcher = request.getRequestDispatcher("error.jsp");
+			request.setAttribute("profileupdate", "false");
+			RequestDispatcher requestdispatcher = request.getRequestDispatcher("edit.jsp");
 			requestdispatcher.forward(request, response);
 		}
 	}

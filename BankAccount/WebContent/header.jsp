@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,7 +18,13 @@
 <title>Hello, world!</title>
 </head>
 <body
-	background="C:\Users\smiddeku\Documents\webapps-workspace\BankAccount\WebContent\Images\img2.jpg">
+	background="https://stmed.net/sites/default/files/piggy-bank-wallpapers-28809-5663057.png">
+	<c:if test="${empty sessionScope.customer}">
+		<%
+			String redirectURL = "index.jsp";
+				response.sendRedirect(redirectURL);
+		%>
+	</c:if>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-basic">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent1"
@@ -28,11 +35,13 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent1">
 			<img
-				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbgHVVHoPNtIV6IKdIRxIyD13HJ6OSw3wPDS_AC42KV5b0RAY02Q"
+				src="https://media.istockphoto.com/vectors/piggy-bank-icon-vector-id539127220"
 				style="width: 90px; height: 90px">
-			<h2>&nbsp;&nbsp;&nbsp;BANK</h2>
+			<h2>&nbsp;&nbsp;&nbsp;PIGGY BANK</h2>
 		</div>
-		<div class="d-flex flex-row-reverse"><a href="updatePassword">Change Password</a></div>
+		<div class="d-flex flex-row-reverse">
+			<a href="updatePassword">Change Password</a>
+		</div>
 	</nav>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -46,43 +55,48 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<li class="nav-item active"><a class="nav-link" href="home.jsp"><b><strong>Home</strong>
+				<li class="nav-item active"><a class="nav-link" href="home"><b><strong>Home</strong>
 					</b><span class="sr-only">(current)</span></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<li class="nav-item"><a class="nav-link" href="editProfile"><b><strong>Edit
 								Profile</strong></b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<li class="nav-item"><a class="nav-link" href="fundTransfer"><b><strong>Fund
 								Transfer</strong></b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"><b><strong>Balance
+				<li class="nav-item"><a class="nav-link" href="#"
+					data-toggle="modal" data-target="#exampleModal"><b><strong>Balance
 								Enquiry</strong></b></a></li>
 			</ul>
-			
+
 			<div class="modal" id="exampleModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Account Status</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Account number is : ${sessionScope.customer.account.accountId}</p>
-        <p>Current Balance is : ${sessionScope.customer.account.balance}</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Account Status</h5>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Account number is :
+								${sessionScope.customer.account.accountId}</p>
+							<p>Current Balance is :
+								${sessionScope.customer.account.balance}</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Close</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="d-flex flex-row-reverse bd-highlight">
 				<ul class="navbar-nav mr-auto">
-<!-- 				//<li class="nav-item active"><a class="nav-link" href="home"><b><strong>Home</strong> -->
-				<li class="nav-item active"><a class="nav-link" href="displayProfile.jsp"><b><strong>Welcome ${sessionScope.customer.customerName}!</strong>
-				<li class="nav-item active"><a class="nav-link" href="logout"><b><strong>Logout</strong></b></a>
-<!-- 				<div class="p-2"><a class="btn btn-warning btn-sm" href="logout">Logout</a> </div> -->
-<%-- 				<div class="p-2 bd-highlight"><h6 style="color: white">Welcome ${sessionScope.customer.customerName}!</h6></div> --%>
+					
+					<li class="nav-item active"><a class="nav-link" ><b><strong>Welcome
+									${sessionScope.customer.customerName}!</strong></b></a></li>
+								<li class="nav-item active"><a class="nav-link"
+									href="logout"><b><strong>Logout</strong></b></a> </li>
 				</ul>
 			</div>
 		</div>

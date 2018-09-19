@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+         <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="ISO-8859-1">
@@ -66,6 +68,17 @@ document.ChangePasswordForm.submit();
     <input type="password" class="form-control" name="conPassword" >
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+  
+   <c:if test = "${requestScope.passwordnotchanged==true }">
+    <div class="alert alert-danger" role="alert">
+    Something went wrong! Password not updated.
+    </div>
+    </c:if>
+    <c:if test = "${requestScope.oldpassword==false }">
+    <div class="alert alert-danger" role="alert">
+    Something went wrong! Password not updated.
+    </div>
+    </c:if>
 </form>
 </div>
 </div>

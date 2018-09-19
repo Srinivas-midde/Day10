@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html");
 		try
 		{
-		long id = Integer.parseInt(request.getParameter("id"));
+		long id = Long.parseLong(request.getParameter("id"));
 		String password = request.getParameter("password");
 		customer = new Customer();
 		customer.setCustomerId(id);

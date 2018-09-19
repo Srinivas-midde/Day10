@@ -43,6 +43,21 @@
     Money Transfered. Balance updated!
     </div>
     </c:if>
+    <c:if test = "${requestScope.negativeamount==true }">
+    <div class="alert alert-danger" role="alert">
+    Invalid amount! Amount cannot be negative.
+    </div>
+    </c:if>
+    <c:if test = "${requestScope.insufficientbalance==true }">
+    <div class="alert alert-danger" role="alert">
+    Insufficient balance!
+    </div>
+    </c:if>
+    <c:if test = "${requestScope.accountnotfound==true }">
+    <div class="alert alert-danger" role="alert">
+    Invalid Recipient!
+    </div>
+    </c:if>
     </div>
 </div>
 </html>
